@@ -13,3 +13,41 @@ function enhance() {
     smally.click();
     biggy.click();
 }
+
+
+
+// Based on Mozilla MDN example, which is in the Public Domain (CC0): https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#Example
+function begin() {
+    console.log("Inside begin function.");
+    // Select the node that will be observed for mutations
+    const targetNode = document.getElementsByClassName("video-in-sharing-container__avatar")[0];
+
+    // Options for the observer (which mutations to observe)
+    const config = { attributes: true, childList: true, subtree: true };
+
+    // Callback function to execute when mutations are observed
+    const callback = function(mutationsList, observer) {
+        // Use traditional 'for loops' for IE 11
+        for(let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                console.log('A child node has been added or removed.');
+            }
+            else if (mutation.type === 'attributes') {
+                console.log('The ' + mutation.attributeName + ' attribute was modified.');
+            }
+        }
+
+        console.log("Probably new speaker");
+        console.log(document.getElementsByClassName("video-in-sharing-container__avatar")[0].innerText);
+
+        // Auto-enhance quality
+        enhance();
+
+    };
+
+    // Create an observer instance linked to the callback function
+    const observer = new MutationObserver(callback);
+
+    // Start observing the target node for configured mutations
+    observer.observe(targetNode, config);
+}
