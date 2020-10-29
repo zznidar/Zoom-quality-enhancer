@@ -1,6 +1,9 @@
 # Zoom-quality-enhancer
 Increase received quality of speaker's camera
 
+## Please note:
+This hack only works if your lecturer shares screen and camera video at the same time. His camera video (usually in the top-right corner of the screen) will have improved quality.
+
 ## Usage
 By the time this extension becomes a reality, you can manually run the code for automatic quality enhancement.
 1. Join a Zoom meeting using your browser.
