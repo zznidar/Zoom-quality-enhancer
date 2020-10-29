@@ -6,8 +6,19 @@ and then change the size of the camera view.
 However, the quality is reduced again when someone else starts speaking.
 To keep the quality, we have to change the size once again. */
 
-var smally = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2")[0];
-var biggy = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-3")[0];
+// Recommended zoom: 200 % (may vary by device)
+
+// Only start enhancing when user joined meeting and required buttons exist
+function startWatching() {
+    if(document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2").length !== 0) {
+        clearInterval(interval);
+        var smally = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2")[0];
+        var biggy = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-3")[0];
+        begin();
+    }
+}
+var interval = setInterval(startWatching, 1000);
+
 
 function enhance() {
     smally.click();
@@ -51,3 +62,8 @@ function begin() {
     // Start observing the target node for configured mutations
     observer.observe(targetNode, config);
 }
+
+
+// Add border around page to see if the extension is loaded
+document.body.style.border = "5px solid pink";
+console.log("OK");

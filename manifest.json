@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "Zoom quality enhancer",
+    "version": "1.0",
+   
+    "description": "Change camera view size each time the speaker is changed to bring the best quality",
+   
+    "content_scripts": [
+      {
+        "matches": ["*://*.zoom.us/*"],
+        "js": ["test.js"]
+      }
+    ],
+   
+    "permissions": []
+  }
