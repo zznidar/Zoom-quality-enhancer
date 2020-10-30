@@ -12,8 +12,8 @@ To keep the quality, we have to change the size once again. */
 function startWatching() {
     if(document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2").length !== 0) {
         clearInterval(interval);
-        var smally = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2")[0];
-        var biggy = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-3")[0];
+        smally = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2")[0];
+        biggy = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-3")[0];
         begin();
     }
 }
