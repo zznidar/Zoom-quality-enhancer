@@ -10,7 +10,8 @@ To keep the quality, we have to change the size once again. */
 
 // Only start enhancing when user joined meeting and required buttons exist
 function startWatching() {
-    if(document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2").length !== 0) {
+    if(document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2").length !== 0 
+    && document.getElementsByClassName("video-in-sharing-container__avatar")[0]) {
         clearInterval(interval);
         smally = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-2")[0];
         biggy = document.getElementsByClassName("suspension-window-container__tab suspension-window-container__tab-3")[0];
