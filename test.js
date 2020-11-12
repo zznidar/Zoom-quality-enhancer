@@ -50,7 +50,7 @@ function begin() {
         }
 
         console.log("Probably new speaker");
-        console.log(document.getElementsByClassName("video-in-sharing-container__avatar")[0].innerText);
+        console.log(document.getElementsByClassName("video-in-sharing-container__avatar")[0]?.innerText || "unknown");
 
         // Auto-enhance quality
         enhance();
