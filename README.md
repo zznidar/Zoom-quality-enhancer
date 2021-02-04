@@ -1,6 +1,9 @@
 # Zoom-quality-enhancer
 Increase received quality of speaker's camera
 
+# Deprecation notice
+The web version of Zoom has been updated. Since then, this trick no longer works. Only low-quality video stream is now available. The repo has been archived.
+
 ## Please note:
 This hack only works if your lecturer shares screen and camera video at the same time. Their camera video (usually in the top-right corner of the screen) will have improved quality.
 
